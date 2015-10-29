@@ -1,0 +1,21 @@
+#!/bin/sh
+# port ordering (view from front):
+#   [ 2 1 0 4 ] [ 3 ]
+
+ifconfig eth0 up
+
+swconfig dev eth0 set reset 1
+swconfig dev eth0 set enable_vlan 1
+
+# Physical Ports 1>101,2>102,3>103,4>104
+swconfig dev eth0 vlan 101 set ports '2 8t'
+swconfig dev eth0 vlan 102 set ports '1 8t'
+swconfig dev eth0 vlan 103 set ports '0 8t'
+swconfig dev eth0 vlan 104 set ports '4 8t'
+
+# Or no DMZ and bridge all 4 PHY ports to 101
+# swconfig dev eth0 vlan 101 set ports '2104 8t'
+
+# WAN port
+swconfig dev eth0 vlan 201 set ports '3 8t'
+swconfig dev eth0 set apply 1
