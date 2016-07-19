@@ -25,7 +25,7 @@ fi
 # Configuration
 #
 
-export OUTSIDE_IF=eth0.201
+export OUTSIDE_IF=eth0
 export OUTSIDE_NET=0.0.0.0/0
 # external IP is dynamic:
 export OUTSIDE_ADDR=`/sbin/ifconfig $OUTSIDE_IF | awk '/inet addr/ { print $2; }' | awk -F: '{ print $2 }'`
@@ -36,13 +36,14 @@ then
 fi
 
 
-export INSIDE_IF=eth0.101
-export INSIDE_ADDR=192.168.13.5
-export INSIDE_NET=192.168.13.0/24
+export INSIDE_IF=eth1
+export INSIDE_ADDR=10.20.30.2
+export INSIDE_BROAD=10.20.30.255
+export INSIDE_NET=10.20.30.0/24
 
-export DMZ_IF=eth0.104
-export DMZ_ADDR=192.168.14.1
-export DMZ_NET=192.168.14.0/24
+export DMZ_IF=eth1
+export DMZ_ADDR=10.20.30.1
+export DMZ_NET=10.20.30.0/24
 
 ############################################################################
 
@@ -94,11 +95,11 @@ accept_from_outside tcp ssh
 #
 # Drop broadcast traffic from the inside before logging
 #
-iptables -A INPUT -p tcp -i $INSIDE_IF -d 192.168.13.255/32 -j DROP
+iptables -A INPUT -p tcp -i $INSIDE_IF -d $INSIDE_BROAD/32 -j DROP
 iptables -A INPUT -p tcp -i $INSIDE_IF -d 255.255.255.255/32 -j DROP
 
-iptables -A INPUT -p udp -i $INSIDE_IF -d 192.168.13.255/32 -j DROP
-iptables -A INPUT -p udp -i $INSIDE_IF -d 255.255.255.255/32 -j DROP
+#iptables -A INPUT -p udp -i $INSIDE_IF -d $INSIDE_BROAD/32 -j DROP
+#iptables -A INPUT -p udp -i $INSIDE_IF -d 255.255.255.255/32 -j DROP
 
 iptables -A INPUT -p igmp -i $INSIDE_IF -d 224.0.0.1/32 -j DROP
 
