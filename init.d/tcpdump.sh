@@ -20,7 +20,7 @@ PATH=/sbin:/usr/sbin:/bin
 FIREWALL_DIR=/home/admin/firewall
 
 do_start () {
-	tcpdump -i eth0.101 -Z admin -w /data/log/pkt-int-%Y%m%d-%H%M%S.dat -G 14400 -U >/data/log/tcpdump.out 2>&1 &
+	tcpdump -i eth1 -Z admin -w /data/log/pkt-int-%Y%m%d-%H%M%S.dat -G 14400 -U >/data/log/tcpdump.out 2>&1 &
 	exit 0
 }
 
