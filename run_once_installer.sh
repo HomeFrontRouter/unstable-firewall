@@ -4,8 +4,9 @@
 # apt-get install sudo, tcpdump, unionfs-fuse, bind9
 apt-get install sudo tcpdump dnsmasq bridge-tools
 
-# Setup the VLANs
-cp ./installer_files/swconfig /etc/network/if-pre-up.d/swconfig
+# Setup the VLANs.
+# Not applicable for zotac. Pablo Tue Jul 12 16:51:39 CDT 2016
+#cp ./installer_files/swconfig /etc/network/if-pre-up.d/swconfig
 
 # Setup the interfaces
 cp ./installer_files/interfaces /etc/network/interfaces
@@ -23,7 +24,7 @@ cp ./installer_files/dnsmasq.conf /etc/.
 #  -p = set this MD5 crypted password: homefront
 useradd -m -r -s /bin/bash -p 'd6966216ca97a1f18179255911fc1e6f' admin
 mkdir /home/admin/firewall
-cp installer.sh /home/admin/firewall/.
+cp install.sh /home/admin/firewall/.
 cp functions.sh /home/admin/firewall/.
 cp -Ru rules.d /home/admin/firewall/.
 chown -Rcv admin /home/admin
