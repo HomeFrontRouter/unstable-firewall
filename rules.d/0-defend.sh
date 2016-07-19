@@ -29,9 +29,9 @@ iptables -A syn-flood -j DROP
 iptables -A INPUT -i $OUTSIDE_IF -p tcp ! --syn -m state --state NEW -j DROP
 
 # JF
-iptables -A FORWARD -i eth0.101 -s 192.168.13.0/255.255.255.0 -j ACCEPT
-iptables -A FORWARD -i eth0.201 -d 192.168.13.0/255.255.255.0 -j ACCEPT
-# iptables -t nat -A POSTROUTING -o eth0.201 -j MASQUERADE
+iptables -A FORWARD -i $INSIDE_IF -s $INSIDE_NET -j ACCEPT
+iptables -A FORWARD -i $OUTSIDE_IF -d $INSIDE_NET -j ACCEPT
+# iptables -t nat -A POSTROUTING -o $OUTSIDE_IF -j MASQUERADE
 
 
 
