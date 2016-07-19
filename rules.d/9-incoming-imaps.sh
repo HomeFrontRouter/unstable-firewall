@@ -10,7 +10,8 @@
 # to the mail server.
 #
 
-IMAP_SERVER=192.168.13.22	# moonbase
+#IMAP_SERVER=192.168.13.22	# moonbase
+IMAP_SERVER=192.168.2.1 # home server
 
 #
 # Rewrite/redirect connections to our public imaps port via DNAT (rewrite
