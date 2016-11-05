@@ -1,0 +1,118 @@
+Oct 30 16:26:41 Probing eth0:
+Oct 30 16:26:45   No DHCP offer received.
+Oct 30 16:26:46   eth0 will be setup as a LAN interface.
+Oct 30 16:26:46   setting eth0 as 10.20.30.1/24
+Oct 30 16:26:46 Probing eth1:
+Oct 30 16:26:50   DHCP offer received. Leasing: 192.168.2.122
+Oct 30 16:26:50   testing WAN/Internet access: pinging 8.8.8.8
+Oct 30 16:26:50   8.8.8.8 is NOT accessible.
+Oct 30 16:26:50   eth1 set as LAN interface.
+Oct 30 16:26:50   192.168.2.122 will be kept anyway.
+Oct 30 16:26:50 ERROR: no access to the Internet.
+Oct 30 16:26:50 exiting...
+Oct 30 16:54:06 Probing eth0:
+Oct 30 16:54:11   No DHCP offer received.
+Oct 30 16:54:11   eth0 will be setup as a LAN interface.
+Oct 30 16:54:11   setting eth0 as 10.20.30.1/24
+Oct 30 16:54:11 Probing eth1:
+Oct 30 16:54:15   DHCP offer received. Leasing: 192.168.2.122
+Oct 30 16:54:15   testing WAN/Internet access: pinging 8.8.8.8
+Oct 30 16:54:17   success: 8.8.8.8 is accessible.
+Oct 30 16:54:17   eth1 set as WAN interface.
+Oct 30 16:54:17   192.168.2.122 will be kept.
+Oct 30 16:54:17 done.
+Oct 30 18:25:54 Probing eth0:
+Oct 30 18:25:58   No DHCP offer received.
+Oct 30 18:25:58   eth0 will be setup as a LAN interface.
+Oct 30 18:25:58   setting eth0 as 10.20.30.1/24
+Oct 30 18:25:58 Probing eth1:
+Oct 30 18:26:02   DHCP offer received. Leasing: 192.168.2.122
+Oct 30 18:26:02   testing WAN/Internet access: pinging 8.8.8.8
+Oct 30 18:26:05   success: 8.8.8.8 is accessible.
+Oct 30 18:26:05   eth1 set as WAN interface.
+Oct 30 18:26:05   192.168.2.122 will be kept.
+Oct 30 18:26:05 done.
+Oct 30 19:52:23 Probing eth0:
+Oct 30 19:52:27   DHCP offer received. Leasing: 192.168.2.119
+Oct 30 19:52:27   testing WAN/Internet access: pinging 8.8.8.8
+Oct 30 19:52:29   success: 8.8.8.8 is accessible.
+Oct 30 19:52:29   eth0 set as WAN interface.
+Oct 30 19:52:29   192.168.2.119 will be kept.
+Oct 30 19:52:29 Probing eth1:
+Oct 30 19:52:33   No DHCP offer received.
+Oct 30 19:52:33   eth1 will be setup as a LAN interface.
+Oct 30 19:52:33   setting eth1 as 10.20.30.1/24
+Oct 30 19:52:33 done.
+Nov 01 21:25:19 Probing eth0:
+Nov 01 21:25:23   DHCP offer received. Leasing: 192.168.2.119
+Nov 01 21:25:23   testing WAN/Internet access: pinging 8.8.8.8
+Nov 01 21:25:25   success: 8.8.8.8 is accessible.
+Nov 01 21:25:25   eth0 set as WAN interface.
+Nov 01 21:25:25   192.168.2.119 will be kept.
+Nov 01 21:25:25 Probing eth1:
+Nov 01 21:25:29   No DHCP offer received.
+Nov 01 21:25:29   eth1 will be setup as a LAN interface.
+Nov 01 21:25:29   setting eth1 as 10.20.30.1/24
+Nov 01 21:25:29 done.
+Nov 01 21:51:32 Probing eth0:
+Nov 01 21:51:36   DHCP offer received. Leasing: 192.168.2.119
+Nov 01 21:51:36   testing WAN/Internet access: pinging 8.8.8.8
+Nov 01 21:51:38   success: 8.8.8.8 is accessible.
+Nov 01 21:51:38   eth0 set as WAN interface.
+Nov 01 21:51:38   192.168.2.119 will be kept.
+Nov 01 21:51:38 Probing eth1:
+Nov 01 21:51:42   DHCP offer received. Leasing: 10.20.30.175
+Nov 01 21:51:42   testing WAN/Internet access: pinging 8.8.8.8
+Nov 01 21:51:44   success: 8.8.8.8 is accessible.
+Nov 01 21:51:44   eth1 set as WAN interface.
+Nov 01 21:51:44   10.20.30.175 will be kept.
+Nov 01 21:51:44 done.
+Nov 01 22:22:16 Probing eth0:
+Nov 01 22:22:20   DHCP offer received. Leasing: 10.20.30.174
+Nov 01 22:22:20   testing WAN/Internet access: pinging 8.8.8.8
+Nov 01 22:22:20   8.8.8.8 is NOT accessible.
+Nov 01 22:22:20   eth0 set as LAN interface.
+Nov 01 22:22:20   10.20.30.174 will be kept anyway.
+Nov 01 22:22:20 Probing eth1:
+Nov 01 22:22:24   DHCP offer received. Leasing: 192.168.2.122
+Nov 01 22:22:24   testing WAN/Internet access: pinging 8.8.8.8
+Nov 01 22:22:26   success: 8.8.8.8 is accessible.
+Nov 01 22:22:26   eth1 set as WAN interface.
+Nov 01 22:22:26   192.168.2.122 will be kept.
+Nov 01 22:22:26 done.
+Nov 02 15:59:52 Probing eth0:
+Nov 02 15:59:57   DHCP offer received. Leasing: 10.20.30.174
+Nov 02 15:59:57   testing WAN/Internet access: pinging 8.8.8.8
+Nov 02 15:59:57   8.8.8.8 is NOT accessible.
+Nov 02 15:59:57   eth0 set as LAN interface.
+Nov 02 15:59:57   10.20.30.174 will be kept anyway.
+Nov 02 15:59:57 Probing eth1:
+Nov 02 16:00:01   DHCP offer received. Leasing: 192.168.2.122
+Nov 02 16:00:01   testing WAN/Internet access: pinging 8.8.8.8
+Nov 02 16:00:03   success: 8.8.8.8 is accessible.
+Nov 02 16:00:03   eth1 set as WAN interface.
+Nov 02 16:00:03   192.168.2.122 will be kept.
+Nov 02 16:00:03 done.
+Nov 02 17:01:45 Probing eth0:
+Nov 02 17:01:49   DHCP offer received. Leasing: 192.168.2.119
+Nov 02 17:01:49   testing WAN/Internet access: pinging 8.8.8.8
+Nov 02 17:01:51   success: 8.8.8.8 is accessible.
+Nov 02 17:01:51   eth0 set as WAN interface.
+Nov 02 17:01:51   192.168.2.119 will be kept.
+Nov 02 17:01:51 Probing eth1:
+Nov 02 17:01:55   DHCP offer received. Leasing: 10.20.30.175
+Nov 02 17:01:55   already have access to the Internet.
+Nov 02 17:01:55   eth1 set as LAN interface.
+Nov 02 17:01:55   10.20.30.175 will be kept anyway.
+Nov 02 17:01:55 done.
+Nov 05 03:47:04 Probing eth0:
+Nov 05 03:47:08   DHCP offer received. Leasing: 192.168.2.119
+Nov 05 03:47:08   testing WAN/Internet access: pinging 8.8.8.8
+Nov 05 03:47:13   success: 8.8.8.8 is accessible.
+Nov 05 03:47:13   eth0 set as WAN interface.
+Nov 05 03:47:13   192.168.2.119 will be kept.
+Nov 05 03:47:13 Probing eth1:
+Nov 05 03:47:17   No DHCP offer received.
+Nov 05 03:47:17   eth1 will be setup as a LAN interface.
+Nov 05 03:47:17   setting eth1 as 10.20.30.1/24
+Nov 05 03:47:17 done.
