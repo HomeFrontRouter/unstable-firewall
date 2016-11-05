@@ -1,6 +1,9 @@
 #!/bin/bash
 
+# Examples of setting the LAN network randomly
 #NET_BYTES="$(shuf -i 0-254 -n1).$(shuf -i 0-254 -n1)"
+#NET_BYTES="$(($RANDOM % 256)).$(($RANDOM % 256))"
+
 NET_BYTES="20.30"
 
 LAN_IP="10.${NET_BYTES}.1"
