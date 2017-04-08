@@ -1,0 +1,15 @@
+#  This file is part of the Home Front Router project.
+
+[Unit]
+Description=HFR Network Service
+DefaultDependencies=no
+Wants=network-online.target
+After=mountkernfs.service local-fs.target urandom.service network.target network-online.target
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ExecStart=/etc/hfr/setifacesv3.sh
+
+[Install]
+WantedBy=multi-user.target
