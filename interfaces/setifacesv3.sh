@@ -91,7 +91,7 @@ do
 
             # test if this interface has access to the Internet
             log "  testing WAN/Internet access: pinging $INTERNET_SITE"
-            if ping -c3 "$INTERNET_SITE" > /dev/null 2>&1
+            if ping -I "$iface" -c3 "$INTERNET_SITE" > /dev/null 2>&1
             then
                 log "  success: $INTERNET_SITE is accessible."
                 log "  $iface set as WAN interface."
