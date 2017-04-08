@@ -57,7 +57,7 @@ IFACES=$(for iface in $(/sbin/ifquery --list --allow=hotplug)
             fi
         done)
 
-# cicle over all interfaces
+# cycle over all interfaces
 for iface in ${IFACES[@]}
 do
     log "Probing ${iface}:"
