@@ -28,16 +28,15 @@
 # easy to change all output to a log if necessary
 log()
 {
-    #echo "$1" > /path/to/log
-    #echo "$1" | tee /path/to/log
-    echo "$(date '+%b %d %T') $1" | tee -a "./hfr_network.log"
+    echo "$1"   # it goes to systemd log
+    echo "$(date '+%b %d %T') $1" >> "/etc/hfr/hfr_network.log"
 }
 
 # global variables
 INTERNET_SITE="8.8.8.8" # address to ping
 
 # obtaining setings for LAN network: $LAN_IP, $LAN_MASK, $LAN_BRD, and $LAN_MTU
-source ./lan_settings.sh
+source /etc/hfr/lan_settings.sh
 
 #IFACES=( 'eth0' 'eth1' )    # ZOTAC interfaces
 
