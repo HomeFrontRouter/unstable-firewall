@@ -121,8 +121,8 @@ if [[ ! -n $WAN ]]
 then
     log "ERROR: no access to the Internet."
     log "exiting..."
-    exit 1
 else
     log "done."
-    exit 0
 fi
+
+exit 0
