@@ -41,20 +41,7 @@ source /etc/hfr/lan_settings.sh
 #IFACES=( 'eth0' 'eth1' )    # ZOTAC interfaces
 
 # get list of available interfaces
-IFACES=$(for iface in $(/sbin/ifquery --list --allow=hotplug)
-        do
-            link=${iface##:*}
-            link=${link##.*}
-            if [ -e "/sys/class/net/$link" ]
-            then
-                # link detection does not work unless we up the link
-                ip link set "$iface" up || true
-                if [ "$(cat /sys/class/net/$link/operstate)" = up ]
-                then
-                    echo "$iface"
-                fi
-            fi
-        done)
+IFACES=$(/sbin/ifquery --list --allow=hotplug)
 
 # cycle over all interfaces
 for iface in ${IFACES[@]}
