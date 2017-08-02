@@ -7,16 +7,12 @@ source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 
-# The primary network interface
+# network interface
+auto eth0
 allow-hotplug eth0
-iface eth0 inet dhcp
+iface eth0 inet manual
 
-# Internal interface for LAN
-# Sat Jul  2 22:05:06 CDT 2016. Pablo
-iface eth1 inet manual
-
+# network interface
 auto eth1
-iface eth1 inet static
-    address 10.20.30.2
-    network 10.20.30.0
-    netmask 255.255.255.0
+allow-hotplug eth1
+iface eth1 inet manual
