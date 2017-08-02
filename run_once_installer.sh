@@ -1,20 +1,28 @@
+#!/bin/bash
+#--------------------------------------------------
 # This script copies the files into place.
+#--------------------------------------------------
 
 # Add packages
-# apt-get install sudo, tcpdump, unionfs-fuse, bind9
+#apt-get install sudo, tcpdump, unionfs-fuse, bind9
 apt-get install sudo tcpdump dnsmasq bridge-tools
+
 
 # Setup the VLANs.
 # Not applicable for zotac. Pablo Tue Jul 12 16:51:39 CDT 2016
 #cp ./installer_files/swconfig /etc/network/if-pre-up.d/swconfig
 
+
 # Setup the interfaces
-cp ./installer_files/interfaces /etc/network/interfaces
+mv /etc/network/interfaces /etc/network/interfaces.old  # save original
+cp ./files_templates/interfaces /etc/network/interfaces
 
-# Bind setup
+
+# DNSmasq setup
+#mkdir /etc/dnsmasq.d
 mkdir /etc/dnsmasq
-cp ./installer_files/dnsmasq.conf /etc/.
-
+mv /etc/dnsmasq.conf /etc/dnsmasq.conf.old  # save original
+cp ./files_templates/dnsmasq.conf /etc/.
 
 
 # Create the admin user
@@ -22,13 +30,13 @@ cp ./installer_files/dnsmasq.conf /etc/.
 #  -r = create a system account, assign it a UID
 #  -s = shell to assign
 #  -p = set this MD5 crypted password: homefront
+
+AHOME="/home/admin"    # admin home
+
 useradd -m -r -s /bin/bash -p 'd6966216ca97a1f18179255911fc1e6f' admin
-mkdir /home/admin/firewall
-cp install.sh /home/admin/firewall/.
-cp functions.sh /home/admin/firewall/.
-cp -Ru rules.d /home/admin/firewall/.
-chown -Rcv admin /home/admin
-chmod -Rcv u+x /home/admin/firewall/ *.sh
+cp -Ru ./scripts/* "$AHOME/."   # copy all scripts
+chown -Rcv admin "$AHOME"       # set permissions
+chmod -Rcv u+x "$AHOME"/*       # grant execution permissions
 
 
 # SSH daemon stuff
@@ -40,18 +48,21 @@ chmod 600 .ssh/authorized_keys
 # ListenAddress 192.168.13.5
 # PermitRootLogin no
 # PasswordAuthentication no
-service ssh restart
+systemctl restart ssh.service
+
+# TCPDUMP
+#cp ./script/init.d/tcpdump.sh /etc/init.d
+#chmod u+x /etc/init.d/tcpdump.sh
 
 
-
-# Set the firewall to start automatically on boot
-cp ./init.d/firewall.sh /etc/init.d
-chmod u+x /etc/init.d/firewall.sh
-update-rc.d firewall.sh defaults 12345 06
-
-# set the iptables rules....
-cp -rp ./rules.d /etc/init.d/.
+#
+# systemd services
 #
 
-# Add a default route only works AFTER the interface exists
-# route add default gw 192.168.13.6
+# Copy systemd services to /etc/systemd/system
+cp ./systemd/* /etc/systemd/system/
+
+# Reload systemd dependencies
+systemctl daemon-reload
+
+exit 0
