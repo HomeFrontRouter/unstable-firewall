@@ -87,4 +87,7 @@ export LAN_BRD="10.${NET_BYTES}.255"
 export LAN_MTU="1500"
 EOT
 
+# Copy LAN settings file to $AHOME
+cp -a ./LAN_SETTINGS "$AHOME/"
+
 exit 0
