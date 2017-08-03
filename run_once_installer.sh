@@ -65,4 +65,26 @@ cp ./systemd/* /etc/systemd/system/
 # Reload systemd dependencies
 systemctl daemon-reload
 
+
+#
+# Set LAN segment randomly
+#
+
+# Example using command shuf
+#NET_BYTES="$(shuf -i 0-254 -n1).$(shuf -i 0-254 -n1)"
+
+# Faster using built-in RANDOM
+NET_BYTES="$(($RANDOM % 256)).$(($RANDOM % 256))"
+
+cat <<EOT > ./LAN_SETTINGS
+#
+# LAN interface settings.
+# Set at installation time: $(date +%F_%T)"
+#
+export LAN_IP="10.${NET_BYTES}.1"
+export LAN_MASK="24"
+export LAN_BRD="10.${NET_BYTES}.255"
+export LAN_MTU="1500"
+EOT
+
 exit 0
