@@ -9,7 +9,7 @@ Before=network-online.target
 Type=oneshot
 RemainAfterExit=yes
 TimeoutStartSec=2min
-ExecStart=/etc/hfr/ifup-wait.sh
+ExecStart=/home/admin/network/ifup-wait.sh
 
 [Install]
 WantedBy=network-online.target
