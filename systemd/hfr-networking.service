@@ -9,7 +9,7 @@ After=mountkernfs.service local-fs.target urandom.service network.target network
 [Service]
 Type=forking
 RemainAfterExit=yes
-ExecStart=/etc/hfr/setifacesv3.sh
+ExecStart=/home/admin/network/setifacesv3.sh
 
 [Install]
 WantedBy=multi-user.target
